@@ -8,12 +8,8 @@ import { gsap } from 'gsap'
 import anime from 'animejs'
 import {
   Building,
-  Scale,
   Key,
   Shield,
-  Globe,
-  Users,
-  Zap,
   TrendingUp,
   CheckCircle,
   ArrowRight,
@@ -21,13 +17,7 @@ import {
   Database,
   Network,
   Cloud,
-  Lock,
   UserCheck,
-  Settings,
-  BarChart3,
-  Clock,
-  Cpu,
-  HardDrive,
   Activity
 } from 'lucide-react'
 
@@ -35,7 +25,7 @@ interface EnterpriseFeature {
   id: string
   title: string
   description: string
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   category: 'byok' | 'compliance' | 'scalability' | 'governance'
   benefits: string[]
   stats?: { label: string; value: string; trend?: 'up' | 'down' }[]
@@ -132,13 +122,12 @@ export default function EnterpriseSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [metrics, setMetrics] = useState(scalabilityMetrics)
   const sectionRef = useRef<HTMLDivElement>(null)
-  const metricsRef = useRef<HTMLDivElement>(null)
 
   // Animate metrics with anime.js
   useEffect(() => {
     metrics.forEach((metric, index) => {
       anime({
-        targets: metric,
+        targets: metric as any,
         current: metric.max * 0.8, // Show 80% capacity
         duration: 2000 + index * 500,
         easing: 'easeOutCubic',
@@ -147,7 +136,7 @@ export default function EnterpriseSection() {
         }
       })
     })
-  }, [])
+  }, [metrics])
 
   // GSAP scroll animations
   useEffect(() => {
@@ -301,7 +290,7 @@ export default function EnterpriseSection() {
             </h2>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Built for the world's largest organizations with enterprise governance,
+              Built for the world&apos;s largest organizations with enterprise governance,
               infinite scalability, and complete data sovereignty.
             </p>
           </motion.div>

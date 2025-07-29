@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { gsap } from 'gsap'
 import anime from 'animejs'
 import { 
   Brain, 
@@ -51,7 +50,7 @@ export default function NeuralNetworkViz() {
     if (!canvas) return
 
     const width = canvas.width = 800
-    const height = canvas.height = 600
+    canvas.height = 600
 
     // Create network layers
     const layers = [
@@ -106,7 +105,7 @@ export default function NeuralNetworkViz() {
 
     // Animate stats with anime.js
     anime({
-      targets: stats,
+      targets: stats as any,
       requests: 850000,
       models: 47,
       savings: 87,
@@ -117,7 +116,7 @@ export default function NeuralNetworkViz() {
         setStats({...stats})
       }
     })
-  }, [])
+  }, [stats])
 
   // Animation loop
   useEffect(() => {

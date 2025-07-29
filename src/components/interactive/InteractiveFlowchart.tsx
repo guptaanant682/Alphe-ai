@@ -1,32 +1,21 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import anime from 'animejs'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import {
-  ArrowRight,
-  ArrowDown,
-  Zap,
   Shield,
-  Database,
-  Cloud,
   Cpu,
   Network,
   BarChart3,
-  Settings,
-  Lock,
   CheckCircle,
-  AlertTriangle,
   Activity,
   Users,
-  Globe,
-  Server,
   Brain,
   Target,
-  Filter,
   Route
 } from 'lucide-react'
 
@@ -34,7 +23,7 @@ interface FlowNode {
   id: string
   title: string
   description: string
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   position: { x: number; y: number }
   status: 'active' | 'processing' | 'complete' | 'idle'
   connections: string[]

@@ -60,7 +60,7 @@ export default function Footer() {
               <Logo size="lg" variant="actual" theme="dark" animated={true} />
               
               <p className="text-muted-foreground max-w-md leading-relaxed">
-                Alpha.AI is the world's first adaptive AI orchestration engine, delivering 
+                Alpha.AI is the world&apos;s first adaptive AI orchestration engine, delivering 
                 enterprise-grade AI infrastructure with intelligent multi-model routing and 
                 zero-trust security.
               </p>

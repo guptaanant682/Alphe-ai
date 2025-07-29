@@ -16,15 +16,11 @@ import {
   Maximize2,
   Code,
   Database,
-  Zap,
   Brain,
   Network,
   Shield,
   BarChart3,
   Activity,
-  Cpu,
-  Cloud,
-  Globe,
   ArrowRight,
   ChevronDown,
   ChevronUp,
@@ -38,7 +34,7 @@ interface TechDemo {
   title: string
   subtitle: string
   description: string
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   component: React.ComponentType
   category: 'visualization' | 'architecture' | 'analytics' | 'interactive'
   technologies: string[]
@@ -137,7 +133,7 @@ export default function TechShowcaseSection() {
       
       anime({
         targets: bars,
-        width: (el: any) => `${el.dataset.value}%`,
+        width: (el: Element) => `${(el as HTMLElement).dataset.value}%`,
         duration: 1500,
         easing: 'easeOutCubic',
         delay: anime.stagger(200)
@@ -181,7 +177,7 @@ export default function TechShowcaseSection() {
             exit={{ opacity: 0, height: 0 }}
             className="space-y-4"
           >
-            {Object.entries(activeDemo.metrics).map(([key, value], index) => (
+            {Object.entries(activeDemo.metrics).map(([key, value]) => (
               <div key={key} className="space-y-2">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-slate-300 capitalize">{key}</span>

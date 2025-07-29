@@ -6,12 +6,10 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import {
   Calculator,
-  DollarSign,
   TrendingDown,
   Zap,
   ArrowRight,
   CheckCircle,
-  AlertCircle,
   BarChart3,
   Clock,
   Shield,
@@ -135,7 +133,7 @@ export default function PricingCalculator() {
             </h2>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              See exactly how much you'll save with Alpha.AI's intelligent orchestration.
+              See exactly how much you&apos;ll save with Alpha.AI&apos;s intelligent orchestration.
               Adjust your usage to get a personalized cost breakdown.
             </p>
           </motion.div>
@@ -239,7 +237,7 @@ export default function PricingCalculator() {
 
             {/* Features */}
             <Card className="p-6 bg-gradient-to-br from-primary/10 to-accent/10 border-primary/20">
-              <h4 className="font-semibold text-foreground mb-4">What's Included</h4>
+              <h4 className="font-semibold text-foreground mb-4">What&apos;s Included</h4>
               <div className="space-y-2">
                 {pricingTiers.find(t => t.name === selectedTier)?.features.map((feature, index) => (
                   <motion.div

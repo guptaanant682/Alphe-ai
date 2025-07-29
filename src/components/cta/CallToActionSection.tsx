@@ -289,8 +289,8 @@ export default function CallToActionSection() {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm text-muted-foreground italic mb-2">
-                      "Alpha.AI reduced our AI infrastructure costs by 82% in the first month. 
-                      The ROI was immediate and measurable."
+                      &ldquo;Alpha.AI reduced our AI infrastructure costs by 82% in the first month. 
+                      The ROI was immediate and measurable.&rdquo;
                     </p>
                     <div className="text-xs">
                       <div className="font-semibold text-foreground">Jane Chen</div>
@@ -309,8 +309,8 @@ export default function CallToActionSection() {
                   </div>
                   <div className="flex-1">
                     <p className="text-sm text-muted-foreground italic mb-2">
-                      "Every portfolio company using Alpha.AI sees 70%+ cost reduction. 
-                      It's the ultimate competitive advantage in AI."
+                      &ldquo;Every portfolio company using Alpha.AI sees 70%+ cost reduction. 
+                      It&apos;s the ultimate competitive advantage in AI.&rdquo;
                     </p>
                     <div className="text-xs">
                       <div className="font-semibold text-foreground">Michael Rodriguez</div>

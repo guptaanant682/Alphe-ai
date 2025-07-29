@@ -11,7 +11,6 @@ import {
   Clock, 
   Zap,
   BarChart3,
-  PieChart,
   Activity
 } from 'lucide-react'
 
@@ -44,15 +43,8 @@ const monthlyUsageData = [
 ]
 
 export default function PerformanceCharts() {
-  const [animationStep, setAnimationStep] = useState(0)
   const [activeChart, setActiveChart] = useState('cost')
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setAnimationStep(prev => (prev + 1) % 3)
-    }, 3000)
-    return () => clearInterval(timer)
-  }, [])
 
   const AnimatedBar = ({ data, index, maxValue }: { data: ChartData; index: number; maxValue: number }) => {
     const percentage = (data.value / maxValue) * 100

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import anime from 'animejs'
 import { Card } from '@/components/ui/card'
@@ -17,12 +17,8 @@ import {
   Cloud,
   Shield,
   Globe,
-  ArrowRight,
   Play,
   Pause,
-  RotateCcw,
-  Settings,
-  Maximize2
 } from 'lucide-react'
 
 interface PerformanceMetric {
@@ -32,7 +28,7 @@ interface PerformanceMetric {
   target: number
   unit: string
   color: string
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   trend: 'up' | 'down' | 'stable'
 }
 
@@ -127,7 +123,7 @@ export default function VelocityShowcase() {
     const animateMetrics = () => {
       metrics.forEach((metric, index) => {
         anime({
-          targets: metric,
+          targets: metric as any,
           value: metric.target,
           duration: 2000 + index * 300,
           easing: 'easeOutCubic',
@@ -177,10 +173,10 @@ export default function VelocityShowcase() {
     return () => {
       tl.kill()
     }
-  }, [])
+  }, [metrics, scenes.length])
 
   // Velocity.js inspired stagger animations
-  const createStaggerAnimation = (elements: string, properties: any) => {
+  const createStaggerAnimation = (elements: string, properties: Record<string, unknown>) => {
     if (!containerRef.current) return
 
     const targets = containerRef.current.querySelectorAll(elements)

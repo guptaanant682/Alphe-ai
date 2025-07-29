@@ -5,16 +5,12 @@ import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import anime from 'animejs'
 import {
-  Zap,
   Brain,
   Network,
   Shield,
-  TrendingUp,
   Database,
   Cloud,
   Cpu,
-  Activity,
-  Globe
 } from 'lucide-react'
 
 export default function TheatreAnimation() {
@@ -44,7 +40,7 @@ export default function TheatreAnimation() {
 
     // Animate stats counters
     anime({
-      targets: stats,
+      targets: stats as any,
       requests: 847000,
       savings: 87,
       models: 47,
@@ -57,7 +53,7 @@ export default function TheatreAnimation() {
     })
 
     return () => clearInterval(sceneInterval)
-  }, [])
+  }, [stats])
 
   // GSAP timeline for complex animations
   useEffect(() => {
@@ -107,7 +103,7 @@ export default function TheatreAnimation() {
     }
   }, [])
 
-  const FloatingIcon = ({ icon: Icon, delay = 0, position }: { icon: any, delay?: number, position: { x: number, y: number } }) => (
+  const FloatingIcon = ({ icon: Icon, delay = 0, position }: { icon: React.ComponentType<{ className?: string }>, delay?: number, position: { x: number, y: number } }) => (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ 

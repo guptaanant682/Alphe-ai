@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { gsap } from 'gsap'
@@ -9,7 +9,6 @@ import anime from 'animejs'
 import {
   Star,
   Quote,
-  ArrowLeft,
   ArrowRight,
   Users,
   TrendingUp,
@@ -147,7 +146,6 @@ export default function TestimonialsSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [showFullTestimonial, setShowFullTestimonial] = useState(false)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const sectionRef = useRef<HTMLDivElement>(null)
   const testimonialRef = useRef<HTMLDivElement>(null)
 
   // Auto-advance testimonials
@@ -278,7 +276,7 @@ export default function TestimonialsSection() {
 
                 {/* Quote */}
                 <blockquote className="text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
-                  "{showFullTestimonial ? currentData.fullTestimonial : currentData.quote}"
+                  &ldquo;{showFullTestimonial ? currentData.fullTestimonial : currentData.quote}&rdquo;
                 </blockquote>
 
                 {/* Author Info */}

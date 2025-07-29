@@ -1,20 +1,18 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { 
   Brain, 
   Zap, 
-  TrendingDown, 
+ 
   Activity, 
-  ArrowRight, 
+ 
   CheckCircle, 
   Clock,
   DollarSign,
-  Shield,
-  Cpu,
   Eye,
   MessageSquare,
   Image,

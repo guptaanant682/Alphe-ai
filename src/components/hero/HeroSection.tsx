@@ -68,7 +68,7 @@ export default function HeroSection() {
               </h1>
               
               <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl leading-relaxed">
-                The world's first adaptive AI orchestration engine with{' '}
+                The world&apos;s first adaptive AI orchestration engine with{' '}
                 <span className="text-green-400 font-semibold">70-90% cost reduction</span>{' '}
                 through intelligent multi-model routing and enterprise-grade security.
               </p>

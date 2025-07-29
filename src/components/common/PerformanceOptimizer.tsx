@@ -22,7 +22,7 @@ export default function PerformanceOptimizer() {
       }
 
       // Optimize for high refresh rate displays
-      const refreshRate = window.screen?.refreshRate || 60
+      const refreshRate = (window.screen as any)?.refreshRate || 60
       if (refreshRate > 60) {
         gsap.ticker.fps(refreshRate)
       }

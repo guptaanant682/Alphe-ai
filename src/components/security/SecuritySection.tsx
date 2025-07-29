@@ -14,13 +14,11 @@ import {
   Server,
   AlertTriangle,
   CheckCircle,
-  Zap,
   Globe,
   Database,
   Network,
   UserCheck,
   FileCheck,
-  Cpu,
   Binary,
   Fingerprint,
   ShieldCheck
@@ -30,7 +28,7 @@ interface SecurityFeature {
   id: string
   name: string
   description: string
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   category: 'authentication' | 'encryption' | 'monitoring' | 'compliance'
   level: 'enterprise' | 'military' | 'quantum'
   details: string[]
@@ -156,7 +154,7 @@ export default function SecuritySection() {
 
     metrics.forEach(metric => {
       anime({
-        targets: securityMetrics,
+        targets: securityMetrics as any,
         [metric.target]: metric.end,
         duration: metric.duration,
         easing: 'easeOutCubic',
@@ -165,7 +163,7 @@ export default function SecuritySection() {
         }
       })
     })
-  }, [])
+  }, [securityMetrics])
 
   // GSAP animation for security grid
   useEffect(() => {

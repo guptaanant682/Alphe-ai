@@ -11,11 +11,8 @@ import {
   Cloud,
   Cpu,
   Network,
-  Lock,
-  ArrowDown,
-  ArrowUp,
-  Eye,
   CheckCircle,
+  ArrowDown,
   Settings,
   BarChart3,
   Brain,
@@ -27,7 +24,7 @@ interface ArchitectureLayer {
   id: string
   name: string
   description: string
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   color: string
   features: string[]
   dataFlow: 'input' | 'processing' | 'output' | 'infrastructure'
