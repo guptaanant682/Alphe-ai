@@ -1,0 +1,22 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#3B82F6" />
+      <stop offset="50%" stopColor="#8B5CF6" />
+      <stop offset="100%" stopColor="#06B6D4" />
+    </linearGradient>
+    <filter id="iconGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Icon Background -->
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#iconGradient)" filter="url(#iconGlow)"/>
+  
+  <!-- Lightning Icon -->
+  <path d="M20 8L14 16H18L12 24L18 16H14L20 8Z" fill="white" stroke="white" strokeWidth="0.5"/>
+</svg>

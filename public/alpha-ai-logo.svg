@@ -1,0 +1,30 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#3B82F6" />
+      <stop offset="50%" stopColor="#8B5CF6" />
+      <stop offset="100%" stopColor="#06B6D4" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Icon Background -->
+  <rect x="2" y="8" width="24" height="24" rx="6" fill="url(#logoGradient)" filter="url(#glow)"/>
+  
+  <!-- Lightning Icon -->
+  <path d="M18 12L14 18H17L13 26L17 20H14L18 12Z" fill="white" stroke="white" strokeWidth="0.5"/>
+  
+  <!-- Alpha.AI Text -->
+  <text x="34" y="18" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" fill="url(#logoGradient)">
+    Alpha.AI
+  </text>
+  <text x="34" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#666">
+    AI Infrastructure
+  </text>
+</svg>

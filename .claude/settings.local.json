@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(npm run build:*)",
+      "Bash(timeout 20 npm run dev)",
+      "Bash(npm install:*)",
+      "Bash(timeout 15 npm run dev)",
+      "WebFetch(domain:www.awwwards.com)",
+      "Bash(timeout 90s npm run build)",
+      "Bash(npm run lint)",
+      "Bash(npx tsc:*)",
+      "Bash(rm:*)",
+      "Bash(npm run dev:*)",
+      "Bash(ls:*)",
+      "Bash(timeout 15s npm run dev)",
+      "Bash(timeout 10s npm run dev)",
+      "Bash(find:*)",
+      "Bash(cp:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": []
+  }
+}
