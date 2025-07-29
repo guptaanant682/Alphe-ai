@@ -40,7 +40,7 @@ export default function TheatreAnimation() {
 
     // Animate stats counters
     anime({
-      targets: stats as any,
+      targets: stats as unknown as Parameters<typeof anime>[0]['targets'],
       requests: 847000,
       savings: 87,
       models: 47,

@@ -127,7 +127,7 @@ export default function EnterpriseSection() {
   useEffect(() => {
     metrics.forEach((metric, index) => {
       anime({
-        targets: metric as any,
+        targets: metric as unknown as Parameters<typeof anime>[0]['targets'],
         current: metric.max * 0.8, // Show 80% capacity
         duration: 2000 + index * 500,
         easing: 'easeOutCubic',

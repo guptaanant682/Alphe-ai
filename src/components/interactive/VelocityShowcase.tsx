@@ -95,6 +95,14 @@ const performanceMetrics: PerformanceMetric[] = [
   }
 ]
 
+const scenes = [
+  'System Initialization',
+  'Load Balancing',
+  'Cost Optimization',
+  'Performance Scaling',
+  'Full Operation'
+]
+
 export default function VelocityShowcase() {
   const [metrics, setMetrics] = useState(performanceMetrics)
   const [isAnimating, setIsAnimating] = useState(true)
@@ -102,13 +110,6 @@ export default function VelocityShowcase() {
   const containerRef = useRef<HTMLDivElement>(null)
   const chartRef = useRef<SVGSVGElement>(null)
 
-  const scenes = [
-    'System Initialization',
-    'Load Balancing',
-    'Cost Optimization',
-    'Performance Scaling',
-    'Full Operation'
-  ]
 
   // Velocity.js-like animations using GSAP and Anime.js
   useEffect(() => {
@@ -123,7 +124,7 @@ export default function VelocityShowcase() {
     const animateMetrics = () => {
       metrics.forEach((metric, index) => {
         anime({
-          targets: metric as any,
+          targets: metric as unknown as Parameters<typeof anime>[0]['targets'],
           value: metric.target,
           duration: 2000 + index * 300,
           easing: 'easeOutCubic',
@@ -150,7 +151,7 @@ export default function VelocityShowcase() {
       clearInterval(sceneInterval)
       clearInterval(updateInterval)
     }
-  }, [isAnimating])
+  }, [isAnimating, metrics])
 
   // GSAP morphing animations
   useEffect(() => {
@@ -173,7 +174,7 @@ export default function VelocityShowcase() {
     return () => {
       tl.kill()
     }
-  }, [metrics, scenes.length])
+  }, [metrics])
 
   // Velocity.js inspired stagger animations
   const createStaggerAnimation = (elements: string, properties: Record<string, unknown>) => {

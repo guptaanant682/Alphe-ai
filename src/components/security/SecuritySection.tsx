@@ -154,7 +154,7 @@ export default function SecuritySection() {
 
     metrics.forEach(metric => {
       anime({
-        targets: securityMetrics as any,
+        targets: securityMetrics as unknown as Parameters<typeof anime>[0]['targets'],
         [metric.target]: metric.end,
         duration: metric.duration,
         easing: 'easeOutCubic',

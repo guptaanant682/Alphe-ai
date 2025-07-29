@@ -22,7 +22,8 @@
       "Bash(git commit:*)",
       "Bash(timeout 300 npm run build)",
       "Bash(timeout 180 npm run build)",
-      "Bash(timeout 120 npm run build)"
+      "Bash(timeout 120 npm run build)",
+      "Bash(timeout 60 npm run lint)"
     ],
     "deny": []
   }

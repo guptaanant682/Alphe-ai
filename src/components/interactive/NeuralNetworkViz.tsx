@@ -105,7 +105,7 @@ export default function NeuralNetworkViz() {
 
     // Animate stats with anime.js
     anime({
-      targets: stats as any,
+      targets: stats as unknown as Parameters<typeof anime>[0]['targets'],
       requests: 850000,
       models: 47,
       savings: 87,

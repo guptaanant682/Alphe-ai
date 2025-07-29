@@ -14,7 +14,7 @@ export default function SmoothScrolling() {
       touchMultiplier: 2,
       infinite: false,
       autoResize: true,
-    } as any)
+    } as ConstructorParameters<typeof Lenis>[0])
 
     // Simple RAF loop
     function raf(time: number) {
